@@ -1,0 +1,24 @@
+<header>
+        <div>
+            <a href="https://portal.topgrep.com/navigate"><h1>Employee Management System</h1></a>
+        </div>
+        
+    </header>
+
+<p><a href="/addemp" class="addbtn">Add Employee</a></p>
+
+<div class="employee-container">
+    {{#each rows}}
+    <div class="employee-card">
+        <h4>{{this.emp_name}}</h4>
+        <p><strong>Department:</strong> {{this.dept}}</p>
+        <p><strong>Email:</strong> {{this.email_id}}</p>
+        <p><strong>Salary:</strong> ${{this.salary}}</p>
+        <p><strong>Phone No:</strong> {{this.phone_no}}</p>
+        <div class="card-actions">
+            <a class="edit" href="/editemp/{{this.emp_id}}">Edit</a>
+            <a onclick="return confirm('Are you sure?')" class="delete" href="/deleteemp/{{this.emp_id}}">Delete</a>
+        </div>
+    </div>
+    {{/each}}
+</div>
