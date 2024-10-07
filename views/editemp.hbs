@@ -1,0 +1,38 @@
+<a href="/" class="back-btn">Back</a> 
+<h2>Edit Employee</h2>
+
+{{#if message}}
+<div class="alert">{{message}}</div>
+{{/if}}
+
+{{#each rows}}
+<div class="edit-employee-card">
+    <form method="post" action="/editemp/{{this.emp_id}}" autocomplete="off">
+        <div class="form-grp">
+            <label for="name">Name:</label>
+            <input type="text" name="emp_name" value="{{this.Name}}" placeholder="Name">
+        </div>
+        <div class="form-grp">
+            <label for="dept">Dept:</label>
+            <input type="text" name="dept" value="{{this.Dept}}" placeholder="Department">
+        </div>
+        <div class="form-grp">
+            <label for="email">Email:</label>
+            <input type="email" name="email_id" value="{{this.Email}}" placeholder="Email">
+        </div>
+        <div class="form-grp">
+            <label for="salary">Salary:</label>
+            <input type="number" name="salary" value="{{this.Salary}}" placeholder="Salary">
+        </div>
+        <div class="form-grp">
+            <label for="phone_no">Phone No:</label>
+            <input type="text" name="phone_no" value="{{this.Phone_No}}" placeholder="Phone Number">
+        </div>
+        <div class="form-actions">
+            <button type="submit" class="save-btn">Save Changes</button>
+            <a href="/" class="view-all-btn">View All</a>
+
+        </div>
+    </form>
+</div>
+{{/each}}
